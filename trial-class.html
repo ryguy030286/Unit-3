@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Combat Zone</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="https://www.sampabjj.com/wp-content/uploads/2018/05/banner.jpg" height="300px">
+        <img src=".jpg" height="300px">
         <h1>Combat Zone</h1>
     </header>
 
@@ -17,7 +18,37 @@
         <a href="trial-class.html">Request Trial</a>
     </nav>
 
-    <p>This is where a submission form should be.  </p>
+    <h2>Fill out the form below to receive a free week trial. </h2>
+
+    <form action="https://someWhereEventually.com">
+        <label for="first">First Name:</label>
+        <input type="text" name="first" id="first">
+
+        <label for="last">Last Name:</label>
+        <input type="text" name="last" id="last">
+
+        <label for="email">Email:</label>
+        <input type="email" name="last" id="email">
+
+        <fieldset>
+            <legend>Reason For Joining</legend>
+
+            <label for="selfDefense">Self Defense</label>
+            <input type="radio" name="reason" value="Self Defense" id="selfDefense">
+
+            <label for="fitness">Fitness</label>
+            <input type="radio" name="reason" value="Fitness" id="fitness">
+
+            <label for="competition">Competition</label>
+            <input type="radio" name="reason" value="Competition" id="competition">
+
+            <label for="hobby">Hobby</label>
+            <input type="radio" name="reason" value="Hobby" id="hobby">
+        </fieldset>
+
+        <input type="submit">
+    </form>
+
 
     <footer>
         <p>Copyright &copy; 2019 - Ryan Sabo - Orland Park, IL  </p>
