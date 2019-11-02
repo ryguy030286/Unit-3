@@ -1,18 +1,18 @@
 body {
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 50px 100px 200px 100px 50px;
-    grid-template-areas: "head" "nav" "main" "aside" "foot";
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 150px auto 150px;
+    grid-template-rows: 60px auto 40px;
+    grid-template-areas:
+            "head head head"
+            "nav main aside"
+            "foot foot foot";
 }
 
 header {
     grid-area: head;
     background: blue;
-}
-
-aside img{
-    width: 100%;
-    max-height: 30%;
 }
 
 nav {
@@ -29,11 +29,6 @@ main {
     font-size: 30px;
 }
 
-main h2{
-    text-underline: black;
-    font-family: Arial;
-}
-
 aside {
     grid-area: aside;
     background: crimson;
@@ -41,49 +36,7 @@ aside {
     padding-top: 20px;
 }
 
-aside li{
-    text-align: left;
-}
-
 footer {
     grid-area: foot;
     background: darkseagreen;
-}
-
-.container{
-
-}
-
-
-/* Minimized Desktop */
-@media all and (min-width: 400px) {
-    body {
-        grid-template-columns: 200px 200px;
-        grid-template-rows: 400px;
-        grid-template-areas:
-                "head head head"
-                "nav nav nav"
-                "main main main"
-                "aside aside aside"
-                "foot foot foot";
-    }
-}
-
-/* Full Desktop */
-@media all and (min-width: 800px) {
-    body {
-        grid-template-columns: 200px auto 200px;
-        grid-template-rows: 50px 300px 50px;
-        grid-template-areas:
-                "head head head"
-                "nav main aside"
-                "nav main aside"
-                "foot foot foot";
-    }
-
-    nav a{
-        display: block;
-        padding: 10px;
-        text-align: center;
-    }
 }
