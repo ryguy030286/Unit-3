@@ -1,0 +1,50 @@
+body {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: 150px auto 250px;
+  grid-template-rows: 60px 60px auto 40px;
+  grid-template-areas: "head head head" "nav nav nav" "main main aside" "foot foot foot";
+  font-family: Arial;
+  color: black;
+  font-size: 15px; }
+
+header {
+  grid-area: head;
+  background: blue;
+  color: red; }
+  header h1 {
+    font-family: "Calibri Light"; }
+
+nav {
+  display: block;
+  grid-area: nav;
+  background: yellow;
+  font-size: 20px;
+  padding: 0px 20px 0px 20px; }
+  nav a {
+    display: inline-block;
+    text-decoration: none;
+    padding-top: 20px; }
+
+main {
+  grid-area: main;
+  background: darkgray;
+  padding: 15px; }
+  main h2 {
+    font-size: 35px; }
+  main p {
+    font-size: 30px; }
+
+aside {
+  grid-area: aside;
+  background: crimson;
+  text-align: center;
+  padding-top: 20px;
+  color: white; }
+
+footer {
+  grid-area: foot;
+  background: darkseagreen; }
+
+/*# sourceMappingURL=scss_styles.css.map */

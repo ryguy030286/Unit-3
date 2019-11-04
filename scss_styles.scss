@@ -1,0 +1,83 @@
+$headerText: red;
+$headerBackground: blue;
+$asideFontColor: white;
+
+
+@mixin body-font-style{
+  font-family: Arial;
+  color:black;
+  font-size: 15px;
+}
+
+@mixin aside-style{
+  background: crimson;
+  text-align: center;
+  padding-top: 20px;
+  color:$asideFontColor;
+}
+
+
+
+body {
+   display: grid;
+   width: 100vw;
+   height: 100vh;
+   grid-template-columns: 150px auto 250px;
+   grid-template-rows: 60px 60px auto 40px;
+   grid-template-areas:
+           "head head head"
+           "nav nav nav"
+           "main main aside"
+           "foot foot foot";
+
+   @include body-font-style
+ }
+
+header {
+  grid-area: head;
+  background:$headerBackground;
+  color:$headerText;
+
+  h1{
+    font-family: "Calibri Light"
+  }
+}
+
+nav {
+  display: block;
+  grid-area: nav;
+  background: yellow;
+  font-size: 20px;
+  padding: 0px 20px 0px 20px;
+
+  a{
+    display: inline-block;
+    text-decoration: none;
+    padding-top: 20px;
+  }
+
+}
+
+main {
+  grid-area: main;
+  background: darkgray;
+  padding: 15px;
+
+  h2{
+    font-size: 35px;
+  }
+
+  p{
+    font-size: 30px;
+  }
+}
+
+aside {
+  grid-area: aside;
+  @include aside-style
+}
+
+footer {
+  grid-area: foot;
+  background: darkseagreen;
+}
