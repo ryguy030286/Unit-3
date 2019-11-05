@@ -1,0 +1,22 @@
+$headerText: red;
+$headerBackground: blue;
+$asideFontColor: white;
+
+
+@mixin body-font-style{
+  font-family: Arial;
+  color:black;
+  font-size: 15px;
+}
+
+@mixin aside-style{
+  background: crimson;
+  text-align: center;
+  padding-top: 20px;
+  color:$asideFontColor;
+}
+
+footer{
+  background: lightgreen;
+  color: white;
+}
