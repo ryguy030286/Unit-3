@@ -1,5 +1,14 @@
 footer {
-  background: lightgreen;
+  background: darkgrey; }
+  footer p {
+    color: white; }
+
+nav div h1 {
+  color: red; }
+
+#aside-content {
+  background: crimson;
+  padding-top: 20px;
   color: white; }
 
 /*# sourceMappingURL=styles.css.map */

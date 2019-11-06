@@ -11,12 +11,25 @@ $asideFontColor: white;
 
 @mixin aside-style{
   background: crimson;
-  text-align: center;
   padding-top: 20px;
   color:$asideFontColor;
 }
 
-footer{
-  background: lightgreen;
-  color: white;
+footer {
+  background: darkgrey;
+  p{
+    color: white;
+  }
+}
+
+nav {
+  div {
+    h1{
+      color: red;
+    }
+  }
+}
+
+#aside-content{
+  @include aside-style
 }
