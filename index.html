@@ -45,9 +45,49 @@
   </nav>
 
   <!-- Page Content -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal-ID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Hero -->
   <div class="container-fluid h-100" >
+    <div class="row">
+      <div class="col">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-3">Welcome to the best MMA gym in the South Suburbs.</h1>
+            <p class="lead">What ever your reason is for persuing mixed martial arts you've come to the right place.</p>
+            <hr class="my-4">
+            <p>Please feel free to browse around our site.</p>
+            <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#modal-ID">Add a modal</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="row h-100">
-      <div class="col-lg-10">
+      <div class="col-lg-10" style="background: red">
         <h2>About Us</h2>
         <p>We are a small and privately owned mixed martial arts gym.
           We were established in 2007 and have instructed clients for

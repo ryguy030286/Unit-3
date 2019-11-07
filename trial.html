@@ -46,24 +46,70 @@
 
 <!-- Page Content -->
 <div class="container-fluid h-100" >
-    <div class="row h-100">
-        <div class="col-lg-10">
-            <h2>Fill out the form below for a free week trail.</h2>
-            <p>FORM WILL GO HERE
-            </p>
-        </div>
-        <div class="col-sm" id="aside-content">
-            <h2>Required Equipment</h2>
-            <ul>
-                <li>Boxing Gloves</li>
-                <li>MMA Gloves</li>
-                <li>Shin Guards</li>
-                <li>Rashguard</li>
-                <li>Mouth Piece</li>
-                <li>Groin Protector</li>
-            </ul>
+    <div class="row h-100 container-fluid">
+        <div class="container">
+            <div class="col-lg-10">
+                <h2>Fill out the form below for a free week trail.</h2>
+            </div>
         </div>
     </div>
+
+
+        <div class="row my-row" id="inputField">
+
+            <div class="col-md-4" style="border: black dashed">
+                <p>
+                    <label for="first">First Name:</label>
+                    <input type="text" id="first">
+                </p>
+                <p>
+                    <label for="last">Last Name:</label>
+                    <input type="text" id="last">
+                </p>
+                <p>
+                    <label for="email" id="emailID">Email:</label>
+                    <input type="email" id="email">
+                </p>
+                <div style="margin-top: 40px" align="center">
+                    <span>Desired trial start date:</span>
+                    <input type="date">
+                </div>
+
+                <div class="dropdown show my-dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Reason For Trying
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Fitness</a>
+                        <a class="dropdown-item" href="#">Self Defense</a>
+                        <a class="dropdown-item" href="#">Competition</a>
+                        <a class="dropdown-item" href="#">Other</a>
+                    </div>
+                </div>
+
+                <div>
+                    <input id="my-submit-Button" type="submit">
+                </div>
+            </div>
+
+            <div class="col-md-6" style="border: black dashed">
+                <h2>Legal Disclaimer</h2>
+                <p>Insert legal text about injury and liability here.</p>
+            </div>
+
+            <div class="col-md-2 required-equipment-col" id="aside-content">
+                <h2>Required Equipment</h2>
+                    <ul>
+                        <li>Boxing Gloves</li>
+                        <li>MMA Gloves</li>
+                        <li>Shin Guards</li>
+                        <li>Rashguard</li>
+                        <li>Mouth Piece</li>
+                        <li>Groin Protector</li>
+                    </ul>
+            </div>
+        </div>
 </div>
 
 <!-- Bootstrap core JavaScript -->

@@ -8,7 +8,41 @@ nav div h1 {
 
 #aside-content {
   background: crimson;
-  padding-top: 20px;
-  color: white; }
+  color: white;
+  border: black 4px; }
+
+.my-row {
+  height: 600px; }
+
+.required-equipment-col {
+  height: 400px; }
+
+h2 {
+  margin-top: 50px;
+  margin-bottom: 80px;
+  text-align: center; }
+
+#first {
+  margin-top: 50px; }
+
+input[type=text], input[type=email], select {
+  width: 350px;
+  padding: 10px;
+  margin: 6px 0;
+  border: 1px solid #aaa;
+  border-radius: 4px; }
+
+label {
+  text-align: right; }
+
+#emailID {
+  margin-left: 35px; }
+
+.my-dropdown {
+  margin: 40px; }
+
+#my-submit-Button {
+  margin-top: 80px;
+  margin-left: 300px; }
 
 /*# sourceMappingURL=styles.css.map */
