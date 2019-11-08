@@ -21,7 +21,7 @@
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
-    <div class="container">
+    <div class="container-fluid">
         <h1>Combat Zone</h1>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -56,7 +56,7 @@
 
     <div class="row my-row-2">
 
-        <div class="col-lg-5">
+        <div class="col-lg-3" style="border: blue solid">
 
                 <form>
                     <!-- Input fields -->
@@ -68,13 +68,13 @@
                         <label for="last">Last Name:</label>
                         <input type="text" id="last">
                     </div>
-                    <div id="email-group">
-                        <label for="email" id="emailID">Email:</label>
+                    <div>
+                        <label for="email">Email:</label>
                         <input type="email" id="email">
                     </div>
 
                     <!-- Dropdown Menu -->
-                    <div class="dropdown show my-dropdown" id="form-dropdown">
+                    <div class="dropdown show form-dropdown">
                         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Reason For Trying
                         </a>
@@ -89,22 +89,22 @@
                     </div>
 
                     <!-- Calendar -->
-                    <div id="form-calendar">
+                    <div class="form-calendar">
                         <p>Desired trial start date:</p>
                         <input type="date">
                     </div>
 
                     <!-- Submit Button -->
-                    <div id="form-submit-button">
+                    <div class="form-submit">
                         <input id="my-submit-Button" type="submit">
                     </div>
                 </form>
         </div>
 
 
-        <div class="col-lg-5 waiver-column">
+        <div class="col-lg-7 waiver-column" style="border: green solid">
 
-                <blockquote> I hereby understand and acknowledge that the training, programs and events held by the Combat Zone may
+                <p id="waiver-text"> I hereby understand and acknowledge that the training, programs and events held by the Combat Zone may
                     expose me to many inherent risks, including accidents, injury, illness, or even death. I assume all risk of
                     injuries associated with participation including, but not limited to, falls, contact with other participants, the effects
                     of the weather, including high heat and/or humidity, and all other such risks being known and appreciated by me.
@@ -118,13 +118,12 @@
                     my participation in the Combat Zone training, programs and/or events.
                     By clicking submit I indicate that I have read and understand this Waiver of Liability. I am aware that this
                     is a waiver and a release of liability and I voluntarily agree to its terms.
-                </blockquote>
+                </p>
 
         </div>
 
 
         <div class="col-lg-2" id="aside-content">
-
                 <h2>Required Equipment</h2>
                 <ul>
                     <li>Boxing Gloves</li>
@@ -134,10 +133,8 @@
                     <li>Mouth Piece</li>
                     <li>Groin Protector</li>
                 </ul>
-
         </div>
     </div>
-
 </div>
 
 <!-- Bootstrap core JavaScript -->

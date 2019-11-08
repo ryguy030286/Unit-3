@@ -22,38 +22,35 @@ input[type=text], input[type=email], select {
   border: 1px solid #aaa;
   border-radius: 4px; }
 
-label {
-  text-align: right; }
-
 .my-row-1 {
   height: 15%; }
 
 .my-row-2 {
   height: 85%; }
 
-.my-input-fields {
-  margin: 30px; }
-  .my-input-fields div {
-    margin: 20px; }
+p.waiver-column {
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em; }
 
-div.waiver-column {
-  text-align: center; }
+.form-dropdown {
+  padding-top: 20px;
+  padding-left: 90px; }
 
-div.waiver-column blockquote {
-  margin-right: 200px; }
+.form-calendar {
+  padding-top: 20px;
+  padding-left: 90px; }
 
-#email-group {
-  padding-left: 35px; }
+.form-submit {
+  margin: 190px 145px; }
 
-#form-dropdown {
-  margin-top: 5px;
-  margin-left: 190px; }
+.waiver-column {
+  text-align: center;
+  justify-content: center; }
 
-#form-calendar {
+#waiver-text {
   margin-top: 30px;
-  margin-left: 190px; }
-
-#form-submit-button {
-  margin: 190px 240px; }
+  padding: 50px;
+  font-size: 18px; }
 
 /*# sourceMappingURL=styles.css.map */
