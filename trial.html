@@ -44,72 +44,100 @@
     </div>
 </nav>
 
+
 <!-- Page Content -->
-<div class="container-fluid h-100" >
-    <div class="row h-100 container-fluid">
-        <div class="container">
-            <div class="col-lg-10">
+<div class="container-fluid vh-100">
+    <div class="row my-row-1">
+            <div class="col-lg-12">
                 <h2>Fill out the form below for a free week trail.</h2>
             </div>
-        </div>
     </div>
 
 
-        <div class="row my-row" id="inputField">
+    <div class="row my-row-2">
 
-            <div class="col-md-4" style="border: black dashed">
-                <p>
-                    <label for="first">First Name:</label>
-                    <input type="text" id="first">
-                </p>
-                <p>
-                    <label for="last">Last Name:</label>
-                    <input type="text" id="last">
-                </p>
-                <p>
-                    <label for="email" id="emailID">Email:</label>
-                    <input type="email" id="email">
-                </p>
-                <div style="margin-top: 40px" align="center">
-                    <span>Desired trial start date:</span>
-                    <input type="date">
-                </div>
+        <div class="col-lg-5">
 
-                <div class="dropdown show my-dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Reason For Trying
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Fitness</a>
-                        <a class="dropdown-item" href="#">Self Defense</a>
-                        <a class="dropdown-item" href="#">Competition</a>
-                        <a class="dropdown-item" href="#">Other</a>
+                <form>
+                    <!-- Input fields -->
+                    <div>
+                        <label for="first">First Name:</label>
+                        <input type="text" id="first">
                     </div>
-                </div>
+                    <div>
+                        <label for="last">Last Name:</label>
+                        <input type="text" id="last">
+                    </div>
+                    <div id="email-group">
+                        <label for="email" id="emailID">Email:</label>
+                        <input type="email" id="email">
+                    </div>
 
-                <div>
-                    <input id="my-submit-Button" type="submit">
-                </div>
-            </div>
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown show my-dropdown" id="form-dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Reason For Trying
+                        </a>
 
-            <div class="col-md-6" style="border: black dashed">
-                <h2>Legal Disclaimer</h2>
-                <p>Insert legal text about injury and liability here.</p>
-            </div>
 
-            <div class="col-md-2 required-equipment-col" id="aside-content">
-                <h2>Required Equipment</h2>
-                    <ul>
-                        <li>Boxing Gloves</li>
-                        <li>MMA Gloves</li>
-                        <li>Shin Guards</li>
-                        <li>Rashguard</li>
-                        <li>Mouth Piece</li>
-                        <li>Groin Protector</li>
-                    </ul>
-            </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Fitness</a>
+                            <a class="dropdown-item" href="#">Self Defense</a>
+                            <a class="dropdown-item" href="#">Competition</a>
+                            <a class="dropdown-item" href="#">Other</a>
+                        </div>
+                    </div>
+
+                    <!-- Calendar -->
+                    <div id="form-calendar">
+                        <p>Desired trial start date:</p>
+                        <input type="date">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div id="form-submit-button">
+                        <input id="my-submit-Button" type="submit">
+                    </div>
+                </form>
         </div>
+
+
+        <div class="col-lg-5 waiver-column">
+
+                <blockquote> I hereby understand and acknowledge that the training, programs and events held by the Combat Zone may
+                    expose me to many inherent risks, including accidents, injury, illness, or even death. I assume all risk of
+                    injuries associated with participation including, but not limited to, falls, contact with other participants, the effects
+                    of the weather, including high heat and/or humidity, and all other such risks being known and appreciated by me.
+                    I hereby acknowledge my responsibility in communicating any physical and psychological concerns that
+                    might conflict with participation in activity. II acknowledge that I am physically fit and mentally capable of
+                    performing the physical activity I choose to participate in.
+                    After having read this waiver and knowing these facts, and in consideration of acceptance of my participation and
+                    the Combat Zone furnishing services to me, I agree, for myself and anyone entitled to act on my behalf, to HOLD
+                    HARMLESS, WAIVE AND RELEASE the RehabGYM, its officers, agents, employees, organizers,
+                    representatives, and successors from any responsibility, liabilities, demands, or claims of any kind arising out of
+                    my participation in the Combat Zone training, programs and/or events.
+                    By clicking submit I indicate that I have read and understand this Waiver of Liability. I am aware that this
+                    is a waiver and a release of liability and I voluntarily agree to its terms.
+                </blockquote>
+
+        </div>
+
+
+        <div class="col-lg-2" id="aside-content">
+
+                <h2>Required Equipment</h2>
+                <ul>
+                    <li>Boxing Gloves</li>
+                    <li>MMA Gloves</li>
+                    <li>Shin Guards</li>
+                    <li>Rashguard</li>
+                    <li>Mouth Piece</li>
+                    <li>Groin Protector</li>
+                </ul>
+
+        </div>
+    </div>
+
 </div>
 
 <!-- Bootstrap core JavaScript -->

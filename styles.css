@@ -8,22 +8,12 @@ nav div h1 {
 
 #aside-content {
   background: crimson;
-  color: white;
-  border: black 4px; }
-
-.my-row {
-  height: 600px; }
-
-.required-equipment-col {
-  height: 400px; }
+  color: white; }
 
 h2 {
   margin-top: 50px;
   margin-bottom: 80px;
   text-align: center; }
-
-#first {
-  margin-top: 50px; }
 
 input[type=text], input[type=email], select {
   width: 350px;
@@ -35,14 +25,35 @@ input[type=text], input[type=email], select {
 label {
   text-align: right; }
 
-#emailID {
-  margin-left: 35px; }
+.my-row-1 {
+  height: 15%; }
 
-.my-dropdown {
-  margin: 40px; }
+.my-row-2 {
+  height: 85%; }
 
-#my-submit-Button {
-  margin-top: 80px;
-  margin-left: 300px; }
+.my-input-fields {
+  margin: 30px; }
+  .my-input-fields div {
+    margin: 20px; }
+
+div.waiver-column {
+  text-align: center; }
+
+div.waiver-column blockquote {
+  margin-right: 200px; }
+
+#email-group {
+  padding-left: 35px; }
+
+#form-dropdown {
+  margin-top: 5px;
+  margin-left: 190px; }
+
+#form-calendar {
+  margin-top: 30px;
+  margin-left: 190px; }
+
+#form-submit-button {
+  margin: 190px 240px; }
 
 /*# sourceMappingURL=styles.css.map */

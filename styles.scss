@@ -12,7 +12,6 @@ $asideFontColor: white;
 @mixin aside-style{
   background: crimson;
   color:$asideFontColor;
-  border: black 4px;
 }
 
 footer {
@@ -34,22 +33,10 @@ nav {
   @include aside-style
 }
 
-.my-row{
-  height:600px;
-}
-
-.required-equipment-col{
-  height:400px;
-}
-
 h2{
   margin-top: 50px;
   margin-bottom: 80px;
   text-align: center;
-}
-
-#first{
-  margin-top: 50px;
 }
 
 input[type=text], input[type=email], select {
@@ -64,15 +51,44 @@ label {
   text-align: right;
 }
 
-#emailID{
-  margin-left: 35px;
+.my-row-1{
+  height: 15%;
 }
 
-.my-dropdown{
-  margin: 40px;
+.my-row-2{
+  height: 85%;
 }
 
-#my-submit-Button{
-  margin-top: 80px;
-  margin-left: 300px;
+.my-input-fields{
+  margin: 30px;
+  div{
+    margin: 20px;
+  }
+}
+
+div.waiver-column {
+  text-align: center }
+
+
+div.waiver-column blockquote {
+  margin-right: 200px;
+}
+
+
+#email-group{
+  padding-left: 35px;
+}
+
+#form-dropdown{
+  margin-top: 5px;
+  margin-left: 190px;
+}
+
+#form-calendar{
+  margin-top: 30px;
+  margin-left: 190px;
+}
+
+#form-submit-button{
+  margin: 190px 240px;
 }
