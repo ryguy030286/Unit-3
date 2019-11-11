@@ -63,6 +63,13 @@ input[type=text], input[type=email], select {
   justify-content: center;
 }
 
+.flex-box-container{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+}
+
+
 #waiver-text{
   margin-top: 30px;
   padding: 50px;
