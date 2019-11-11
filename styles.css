@@ -17,8 +17,6 @@ h2 {
 
 input[type=text], input[type=email], select {
   width: 350px;
-  padding: 10px;
-  margin: 6px 0;
   border: 1px solid #aaa;
   border-radius: 4px; }
 
@@ -28,21 +26,8 @@ input[type=text], input[type=email], select {
 .my-row-2 {
   height: 85%; }
 
-p.waiver-column {
-  margin-left: auto;
-  margin-right: auto;
-  width: 8em; }
-
-.form-dropdown {
-  padding-top: 20px;
-  padding-left: 90px; }
-
-.form-calendar {
-  padding-top: 20px;
-  padding-left: 90px; }
-
-.form-submit {
-  margin: 190px 145px; }
+.drop-down-class {
+  margin-left: 20px; }
 
 .waiver-column {
   text-align: center;
@@ -52,5 +37,14 @@ p.waiver-column {
   margin-top: 30px;
   padding: 50px;
   font-size: 18px; }
+
+#form-drop-down {
+  padding-top: 20px; }
+
+#form-calendar {
+  padding-top: 20px; }
+
+#form-submit {
+  padding-top: 140px; }
 
 /*# sourceMappingURL=styles.css.map */
