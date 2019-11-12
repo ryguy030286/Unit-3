@@ -1,11 +1,13 @@
 footer {
-  background: darkgrey; }
+  background: darkgrey;
+  width: 100%; }
   footer p {
     color: white; }
 
 nav div h1 {
   color: red;
-  font-size: 60px; }
+  font-size: 60px;
+  text-shadow: 3px 2px black; }
 
 #aside-content {
   background: crimson;
@@ -26,12 +28,17 @@ h2 {
 .page-color {
   background: gray;
   color: lightgray; }
-  .page-color p {
-    font-size: 20px; }
+
+#index-page-text {
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: 0px 20px;
+  text-indent: 80px; }
 
 .form-color {
   background: lightgray;
-  border: black dashed; }
+  border-right: black solid; }
 
 input[type=text], input[type=email], select {
   width: 220px;
@@ -53,7 +60,8 @@ input[type=text], input[type=email], select {
   font-size: 22px;
   font-family: Calibri;
   padding: 40px 80px;
-  color: lightgray; }
+  color: lightgray;
+  text-indent: 80px; }
 
 .flex-box-container {
   display: flex;
@@ -62,6 +70,9 @@ input[type=text], input[type=email], select {
 
 .form-alerts {
   margin-top: 20px; }
+
+.carousel-custom {
+  margin-top: 60px; }
 
 #form-drop-down {
   padding-top: 20px; }

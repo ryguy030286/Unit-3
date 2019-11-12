@@ -16,6 +16,7 @@ $asideFontColor: white;
 
 footer {
   background: darkgrey;
+  width:100%;
   p{
     color: white;
   }
@@ -26,6 +27,7 @@ nav {
     h1{
       color: red;
       font-size: 60px;
+      text-shadow: 3px 2px black;
     }
   }
 }
@@ -51,13 +53,19 @@ h2{
 .page-color{
   background: gray;
   color: lightgray;
-  p{
-    font-size: 20px;
-  }
+}
+
+#index-page-text {
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: 0px 20px;
+  text-indent: 80px;
 }
 
 .form-color{
-  background: lightgray;border: black dashed;
+  background: lightgray;
+  border-right: black solid;
 }
 
 input[type=text], input[type=email], select {
@@ -85,6 +93,7 @@ input[type=text], input[type=email], select {
   font-family: Calibri;
   padding: 40px 80px;
   color: lightgray;
+  text-indent: 80px;
 }
 
 .flex-box-container{
@@ -95,6 +104,10 @@ input[type=text], input[type=email], select {
 
 .form-alerts{
   margin-top: 20px;
+}
+
+.carousel-custom{
+  margin-top: 60px;
 }
 
 #form-drop-down{
