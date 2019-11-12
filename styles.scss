@@ -25,6 +25,7 @@ nav {
   div {
     h1{
       color: red;
+      font-size: 60px;
     }
   }
 }
@@ -39,8 +40,28 @@ h2{
   text-align: center;
 }
 
+.row-color{
+  background: dodgerblue;
+  border-bottom: black solid;
+  color: white;
+  font-family: Arial;
+  text-shadow: black 2px 4px;
+}
+
+.page-color{
+  background: gray;
+  color: lightgray;
+  p{
+    font-size: 20px;
+  }
+}
+
+.form-color{
+  background: lightgray;border: black dashed;
+}
+
 input[type=text], input[type=email], select {
-  width: 350px;
+  width: 220px;
   border: 1px solid #aaa;
   border-radius: 4px;
 }
@@ -53,7 +74,6 @@ input[type=text], input[type=email], select {
   height: 85%;
 }
 
-
 .drop-down-class{
   margin-left: 20px;
 }
@@ -61,6 +81,10 @@ input[type=text], input[type=email], select {
 .waiver-column{
   text-align: center;
   justify-content: center;
+  font-size: 22px;
+  font-family: Calibri;
+  padding: 40px 80px;
+  color: lightgray;
 }
 
 .flex-box-container{
@@ -69,11 +93,8 @@ input[type=text], input[type=email], select {
   bottom: 0;
 }
 
-
-#waiver-text{
-  margin-top: 30px;
-  padding: 50px;
-  font-size: 18px;
+.form-alerts{
+  margin-top: 20px;
 }
 
 #form-drop-down{
@@ -85,6 +106,5 @@ input[type=text], input[type=email], select {
 }
 
 #form-submit{
-  padding-top: 140px;
-
+  margin-top: 40px;
 }
