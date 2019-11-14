@@ -10,7 +10,7 @@ $asideFontColor: white;
 }
 
 @mixin aside-style{
-  background: crimson;
+  background: linear-gradient(red, crimson);
   color:$asideFontColor;
 }
 
@@ -20,6 +20,12 @@ footer {
   p{
     color: white;
   }
+}
+
+a:hover {
+  color: red;
+  font-size: 36px;
+  line-height:18pt;
 }
 
 nav {

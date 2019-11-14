@@ -4,13 +4,18 @@ footer {
   footer p {
     color: white; }
 
+a:hover {
+  color: red;
+  font-size: 36px;
+  line-height: 18pt; }
+
 nav div h1 {
   color: red;
   font-size: 60px;
   text-shadow: 3px 2px black; }
 
 #aside-content {
-  background: crimson;
+  background: linear-gradient(red, crimson);
   color: white; }
 
 h2 {
