@@ -72,6 +72,10 @@
                     <input type="email" id="email">
                 </div>
 
+                <div class="row justify-content-center">
+                    <input type="text" id="drop-down-feedback" placeholder="Use the dropdown below" style="margin-top: 10px">
+                </div>
+
                 <!-- Dropdown Menu -->
                 <div class="row justify-content-center" id="form-drop-down">
                     <div class="dropdown">
@@ -105,10 +109,10 @@
 
             <!-- Form Alerts -->
             <div class="container form-alerts">
-                <div class="alert alert-success d-none" role="alert">
+                <div class="alert alert-success d-none" role="alert" id="form-success">
                     Form Submitted
                 </div>
-                <div class="alert alert-danger d-none" role="alert">
+                <div class="alert alert-danger d-none" role="alert" id="form-failed">
                     Form Not Submitted
                 </div>
             </div>
@@ -148,9 +152,21 @@
                 <li>Groin Protector</li>
             </ul>
 
-            <div class="flex-box-container">
-                <img src="images/svg_fighting.svg" alt="Karate SVG" style="width:15vw">
+
+            <!-- Toast Test -->
+            <div class="toast" data-autohide="false">
+                <div class="toast-header">
+                    <small class="text-muted">Message of the day</small>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+                </div>
+                <div class="toast-body" style="color: black">
+                    Military and Lawn Enforcement receive a 15% disount.
+                </div>
             </div>
+
+
+
+        </div>
 
         </div>
     </div>
