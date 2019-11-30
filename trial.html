@@ -56,24 +56,24 @@
     <div class="row my-row-2">
 
         <div class="col-lg-2 form-color">
-            <form id="contact">
+            <form id="contact" action="https://formspree.io/xrgbpkyw" method="POST">
                 <div class="row justify-content-center">
                     <label for="first">First Name:</label>
-                    <input type="text" id="first">
+                    <input type="text" id="first" name="firstName">
                 </div>
 
                 <div class="row justify-content-center">
                     <label for="last">Last Name:</label>
-                    <input type="text" id="last">
+                    <input type="text" id="last" name="lastName">
                 </div>
 
                 <div class="row justify-content-center">
                     <label for="email">Email:</label>
-                    <input type="email" id="email">
+                    <input type="email" id="email" name="emailAddress">
                 </div>
 
                 <div class="row justify-content-center">
-                    <input type="text" id="drop-down-feedback" placeholder="Use the dropdown below" style="margin-top: 10px">
+                    <input type="text" id="drop-down-feedback" placeholder="Use the dropdown below" style="margin-top: 10px" name="reason">
                 </div>
 
                 <!-- Dropdown Menu -->
@@ -94,7 +94,7 @@
                 <div class="row justify-content-center" id="form-calendar">
                     <div>
                         <p>Desired trial start date:</p>
-                        <input type="date" id="calendar">
+                        <input type="date" id="calendar" name="startDate">
                     </div>
                 </div>
 
@@ -102,7 +102,7 @@
                 <!-- Submit Button -->
                 <div class="row justify-content-center" id="form-submit">
                     <div class="form-submit">
-                        <input id="my-submit-Button" type="submit" value="Submit">
+                        <input id="my-submit-Button" type="submit" value="submit">
                     </div>
                 </div>
             </form>

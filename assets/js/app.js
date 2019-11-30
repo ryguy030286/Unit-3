@@ -33,8 +33,27 @@ if (firstName.value == "" || lastName.value == "" || email.value == "" || calend
         document.getElementById("form-success").classList.remove("d-none");
         document.getElementById("form-failed").classList.add("d-none");
         e.preventDefault();
+
+        const form = document.getElementById("contact");
+        const method = form.getAttribute("method");
+        const action = form.getAttribute("action");
+        const submitForm = async (evt) => {
+            return await fetch(action, {
+                method, // shorthand for method: method
+                mode: 'cors', // make sure you are running through HTTP:// and not file://
+                data: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
+                //credentials: 'include' // I added this because my promise/response object was showing a 401 error.
+            });
+
+        };
+        submitForm().then(response => {
+            console.log(response);
+    });
+
+
     }
 }
+
 
 //Bootstrap Toast Message
 
@@ -55,6 +74,7 @@ $(document).ready(function() {
 
 //Boostrap Drop Down on Form
 
+//Code was modified from https://stackoverflow.com/questions/24620741/get-selected-item-value-from-bootstrap-dropdown-with-specific-id
 $('#form-dropdown-test a').on('click', function(){
     $('#drop-down-feedback').val($(this).html());
 });
