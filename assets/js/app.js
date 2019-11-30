@@ -57,7 +57,7 @@ if (firstName.value == "" || lastName.value == "" || email.value == "" || calend
 
 //Bootstrap Toast Message
 
-//Launches advertisement 5 seconds after page loads..
+//Launches advertisement 5 seconds after page loads...
 $(document).ready(function() {
     setTimeout(function() {
         $('.toast').toast('show');
