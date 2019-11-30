@@ -41,10 +41,10 @@ if (firstName.value == "" || lastName.value == "" || email.value == "" || calend
             return await fetch(action, {
                 method, // shorthand for method: method
                 mode: 'cors', // make sure you are running through HTTP:// and not file://
-                data: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
-                //credentials: 'include' // I added this because my promise/response object was showing a 401 error.
+                data: new FormData(form), // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
+                credentials: 'include' // I added this because my promise/response object was showing a 401 error.
             });
-
+        console.log(submitForm)
         };
         submitForm().then(response => {
             console.log(response);
