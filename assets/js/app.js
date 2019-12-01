@@ -27,15 +27,13 @@ if (firstName.value == "" || lastName.value == "" || email.value == "" || calend
         console.log("Launch error message.");
         document.getElementById("form-failed").classList.remove("d-none");
         document.getElementById("form-success").classList.add("d-none");
-        e.preventDefault();
     } else {
         console.log("Confirm validation is ok.");
         document.getElementById("form-success").classList.remove("d-none");
         document.getElementById("form-failed").classList.add("d-none");
-        e.preventDefault();
-
         const form = document.getElementById("#contact");
         form.addEventListener('submit', e => {
+            e.preventDefault();
             const method = form.getAttribute("method");
             const action = form.getAttribute("action");
             const submitForm = async (evt) => {
