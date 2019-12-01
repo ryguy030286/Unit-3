@@ -36,7 +36,6 @@ if (firstName.value == "" || lastName.value == "" || email.value == "" || calend
 
         const form = document.getElementById("#contact");
         form.addEventListener('submit', e => {
-            e.preventDefault();
             const method = form.getAttribute("method");
             const action = form.getAttribute("action");
             const submitForm = async (evt) => {
