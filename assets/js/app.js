@@ -2,45 +2,36 @@
 function myAppOnload(e) {
     $('.alert').alert();
 
-    //Bootstrap JS Tool Tip
-    $('[data-toggle="tooltip"]').tooltip()
-
-
-
-
-    document.getElementById("contact").addEventListener("submit", validate);
-
-
-
 //Form Validation
     var firstName = document.getElementById("first");
     var lastName = document.getElementById("last");
     var email = document.getElementById("email");
     var calendar = document.getElementById("calendar");
     var dropDown = document.getElementById("drop-down-feedback");
+    var form = document.getElementById("#contact")
 
-
-    function validate(e) {
-        if (firstName.value == "" || lastName.value == "" || email.value == "" || calendar.value == "" || dropDown.value == "") {
-            console.log("Launch error message.");
-            document.getElementById("form-failed").classList.remove("d-none");
-            document.getElementById("form-success").classList.add("d-none");
-        } else {
-            console.log("Confirm validation is ok.");
-            document.getElementById("form-success").classList.remove("d-none");
-            document.getElementById("form-failed").classList.add("d-none");
-            const form = document.getElementById("#contact");
             form.addEventListener('submit', e => {
                 e.preventDefault();
-                const method = form.getAttribute("method");
-                const action = form.getAttribute("action");
-                const submitForm = async (evt) => {
-                    return await fetch(action, {
-                        method, // shorthand for method: method
-                        mode: 'cors', // make sure you are running through HTTP:// and not file://
-                        data: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
-                    });
-                };
+
+                if (firstName.value == "" || lastName.value == "" || email.value == "" || calendar.value == "" || dropDown.value == "") {
+                    console.log("Launch error message.");
+                    document.getElementById("form-failed").classList.remove("d-none");
+                    document.getElementById("form-success").classList.add("d-none");
+                } else {
+                    console.log("Confirm validation is ok.");
+                    document.getElementById("form-success").classList.remove("d-none");
+                    document.getElementById("form-failed").classList.add("d-none");
+                    const form = document.getElementById("#contact");
+
+                    const method = form.getAttribute("method");
+                    const action = form.getAttribute("action");
+                    const submitForm = async (evt) => {
+                        return await fetch(action, {
+                            method, // shorthand for method: method
+                            mode: 'cors', // make sure you are running through HTTP:// and not file://
+                            data: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
+                        });
+                    };
 
                 console.log(submitForm());
                 console.log(' ');
@@ -51,20 +42,9 @@ function myAppOnload(e) {
                 // on a successful promise/submission, display a success alert
                 // on a failure promise/submission, display a failure (danger) alert
 
-            });
+            }});
 
-            /*
-                submitForm().then(response => {
-                    console.log(response);
-                });
-
-             */
             console.log("Outside of else statement.");
-        }
-
-
-    }
-
 
 //Bootstrap Toast Message
 
@@ -89,11 +69,6 @@ function myAppOnload(e) {
     $('#form-dropdown-test a').on('click', function(){
         $('#drop-down-feedback').val($(this).html());
     });
-
-
-
-
-
 
 }
 
