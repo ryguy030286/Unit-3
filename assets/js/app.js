@@ -47,7 +47,7 @@ if (firstName.value == "" || lastName.value == "" || email.value == "" || calend
                 data: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
                 //credentials: 'omit' // I added this because my promise/response object was showing a 401 error.......
             })
-            const myJson = await submitForm().json();
+            const myJson = await submitForm.json();
             console.log(JSON.stringify(myJson));
 
 
