@@ -34,22 +34,30 @@ if (firstName.value == "" || lastName.value == "" || email.value == "" || calend
         document.getElementById("form-failed").classList.add("d-none");
         e.preventDefault();
 
+
         const form = document.getElementById("contact");
         const method = form.getAttribute("method");
         const action = form.getAttribute("action");
+
+
         const submitForm = async (evt) => {
             return await fetch(action, {
                 method, // shorthand for method: method
                 mode: 'cors', // make sure you are running through HTTP:// and not file://
                 data: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
                 //credentials: 'omit' // I added this because my promise/response object was showing a 401 error.......
-            });
-        console.log(submitForm)
+            })
+            const myJson = await submitForm().json();
+            console.log(JSON.stringify(myJson));
+
+
         };
-        submitForm().then(response => {
-            console.log(response);
+/*
+    submitForm().then(response => {
+        console.log(response);
     });
 
+ */
 
     }
 }
