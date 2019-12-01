@@ -20,7 +20,7 @@ function myAppOnload(e) {
     var dropDown = document.getElementById("drop-down-feedback");
 
 
-    function validate() {
+    function validate(e) {
         if (firstName.value == "" || lastName.value == "" || email.value == "" || calendar.value == "" || dropDown.value == "") {
             console.log("Launch error message.");
             document.getElementById("form-failed").classList.remove("d-none");
