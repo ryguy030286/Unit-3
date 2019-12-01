@@ -46,11 +46,10 @@ if (firstName.value == "" || lastName.value == "" || email.value == "" || calend
                 mode: 'cors', // make sure you are running through HTTP:// and not file://
                 data: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
             });
-            const myJson = await submitForm.json();
-            console.log(JSON.stringify(myJson));
-
 
         };
+        const myJson =  submitForm.json();
+        console.log(JSON.stringify(myJson));
 /*
     submitForm().then(response => {
         console.log(response);
