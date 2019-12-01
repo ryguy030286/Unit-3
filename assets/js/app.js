@@ -59,8 +59,10 @@ function myAppOnload(e) {
                 });
 
              */
-
+            console.log("Outside of else statement.");
         }
+
+
     }
 
 
