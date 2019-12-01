@@ -44,6 +44,9 @@ if (firstName.value == "" || lastName.value == "" || email.value == "" || calend
                 });
             };
 
+            console.log(submitForm());
+            console.log(' ');
+            console.log(submitForm().json());
             // @todo handle submitForm Promise
             // @see <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Response_objects>
             // @see <https://javascript.info/async>
