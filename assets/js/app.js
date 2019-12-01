@@ -34,19 +34,26 @@ if (firstName.value == "" || lastName.value == "" || email.value == "" || calend
         document.getElementById("form-failed").classList.add("d-none");
         e.preventDefault();
 
-        const form = document.getElementById("contact");
-        const method = form.getAttribute("method");
-        const action = form.getAttribute("action");
+        const form = document.getElementById("#contact");
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const method = form.getAttribute("method");
+            const action = form.getAttribute("action");
+            const submitForm = async (evt) => {
+                return await fetch(action, {
+                    method, // shorthand for method: method
+                    mode: 'cors', // make sure you are running through HTTP:// and not file://
+                    data: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
+                });
+            };
 
+            // @todo handle submitForm Promise
+            // @see <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Response_objects>
+            // @see <https://javascript.info/async>
+            // on a successful promise/submission, display a success alert
+            // on a failure promise/submission, display a failure (danger) alert
 
-        const submitForm = async (evt) => {
-            return await fetch(action, {
-                method, // shorthand for method: method
-                mode: 'cors', // make sure you are running through HTTP:// and not file://
-                data: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
-            });
-
-        };
+        });
 
 /*
     submitForm().then(response => {
