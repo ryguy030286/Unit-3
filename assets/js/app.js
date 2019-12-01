@@ -34,7 +34,6 @@ if (firstName.value == "" || lastName.value == "" || email.value == "" || calend
         document.getElementById("form-failed").classList.add("d-none");
         e.preventDefault();
 
-
         const form = document.getElementById("contact");
         const method = form.getAttribute("method");
         const action = form.getAttribute("action");
@@ -48,8 +47,7 @@ if (firstName.value == "" || lastName.value == "" || email.value == "" || calend
             });
 
         };
-        const myJson =  submitForm.json();
-        console.log(JSON.stringify(myJson));
+
 /*
     submitForm().then(response => {
         console.log(response);
