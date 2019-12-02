@@ -2,13 +2,15 @@
 function myAppOnload(e) {
     $('.alert').alert();
 
+    console.log("Start of myAppOnLoad function.");
+
     //Form Validation
-    var firstName = document.getElementById("first");
-    var lastName = document.getElementById("last");
-    var email = document.getElementById("email");
-    var calendar = document.getElementById("calendar");
-    var dropDown = document.getElementById("drop-down-feedback");
-    var form = document.getElementById("#contact")
+    let firstName = document.getElementById("first");
+    let lastName = document.getElementById("last");
+    let email = document.getElementById("email");
+    let calendar = document.getElementById("calendar");
+    let dropDown = document.getElementById("drop-down-feedback");
+    let form = document.getElementById("#contact")
 
     form.addEventListener('submit', e => {
         e.preventDefault();
@@ -33,10 +35,6 @@ function myAppOnload(e) {
                 });
             };
 
-        console.log(submitForm());
-        console.log(' ');
-        console.log(submitForm().json());
-
         // @todo handle submitForm Promise
         // @see <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Response_objects>
         // @see <https://javascript.info/async>
@@ -50,9 +48,7 @@ function myAppOnload(e) {
 }
 
 document.addEventListener('onload', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
-
 console.log("myApponLoad Loaded");
-
 
 //Bootstrap Toast Message
 
