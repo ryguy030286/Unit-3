@@ -4,16 +4,18 @@ function myAppOnload(e) {
 
     console.log("Start of myAppOnLoad function.");
 
-    //Form Validation
-    let firstName = document.getElementById("first");
-    let lastName = document.getElementById("last");
-    let email = document.getElementById("email");
-    let calendar = document.getElementById("calendar");
-    let dropDown = document.getElementById("drop-down-feedback");
     let form = document.getElementById("#contact")
 
     form.addEventListener('submit', e => {
         e.preventDefault();
+
+        //Form Validation
+        let firstName = document.getElementById("first");
+        let lastName = document.getElementById("last");
+        let email = document.getElementById("email");
+        let calendar = document.getElementById("calendar");
+        let dropDown = document.getElementById("drop-down-feedback");
+
 
         if (firstName.value == "" || lastName.value == "" || email.value == "" || calendar.value == "" || dropDown.value == "") {
             console.log("Launch error message.");
@@ -34,6 +36,8 @@ function myAppOnload(e) {
                     data: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
                 });
             };
+
+            document.getElementById('response').innerHTML += '<br>test';
 
         // @todo handle submitForm Promise
         // @see <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Response_objects>
