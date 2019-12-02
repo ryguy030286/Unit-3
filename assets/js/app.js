@@ -54,7 +54,7 @@ function myAppOnload(e) {
 }
 
 document.addEventListener('onload', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
-
+console.log("After the document event listener");
 
 //Bootstrap Toast Message
 
