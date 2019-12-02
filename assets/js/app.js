@@ -37,7 +37,7 @@ function myAppOnload(e) {
                 });
             };
 
-            document.getElementById('response').innerHTML += '<br>test';
+            console.log(submitForm());
 
         // @todo handle submitForm Promise
         // @see <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Response_objects>
@@ -45,14 +45,16 @@ function myAppOnload(e) {
         // on a successful promise/submission, display a success alert
         // on a failure promise/submission, display a failure (danger) alert
 
-    }});
+    }
 
-    console.log("End of submit button function.  The function was loaded.");
+    });
+
+    console.log("myApponLoad Loaded");
 
 }
 
 document.addEventListener('onload', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
-console.log("myApponLoad Loaded");
+
 
 //Bootstrap Toast Message
 
