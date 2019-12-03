@@ -86,7 +86,6 @@ const pageViewsKeyName = "pageViews";
  * Add the current page path + timestamp to the pageviews entry in local storage
  */
 function addPageView() {
-    console.log("addPageView loaded")
     /**
      * In order to add a page view,
      * we have to first check if there are any page views set
@@ -97,7 +96,7 @@ function addPageView() {
     let arr = [];
     if (pageViews && pageViews.length > 0) {
         // get the array stored in local storage at pageViewsKeyName
-        arr = JSON.parse(pageViews.path, pageViews.timestamp);
+        arr = JSON.parse(pageViews);
     }
 
     // now we're able to insert an item in the page view data
@@ -107,10 +106,8 @@ function addPageView() {
     };
 
     // now add new page data to the array
-    arr.push(newPageData.path);
-    arr.push(newPageData.timestamp);
+    arr.push(newPageData);
 
-    //Alex's fix to show data.
     // arr.push(newPageData.path, newPageData.timestamp);
 
 
