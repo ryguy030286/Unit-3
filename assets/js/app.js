@@ -4,10 +4,11 @@ function myAppOnload(e) {
 
     console.log("Start of myAppOnLoad function.");
 
-    let form = document.getElementById("#contact")
+    let form = document.getElementById("contact")
 
     form.addEventListener('submit', e => {
         e.preventDefault();
+        debugger;
 
         //Form Validation
         let firstName = document.getElementById("first");
@@ -25,7 +26,7 @@ function myAppOnload(e) {
             console.log("Confirm validation is ok.");
             document.getElementById("form-success").classList.remove("d-none");
             document.getElementById("form-failed").classList.add("d-none");
-            const form = document.getElementById("#contact");
+            const form = document.getElementById("contact");
 
             const method = form.getAttribute("method");
             const action = form.getAttribute("action");
@@ -34,10 +35,10 @@ function myAppOnload(e) {
                     method, // shorthand for method: method
                     mode: 'cors', // make sure you are running through HTTP:// and not file://
                     data: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
-                });
+                }).then().catch()
             };
 
-            console.log(submitForm());
+
 
         // @todo handle submitForm Promise
         // @see <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Response_objects>
@@ -53,11 +54,14 @@ function myAppOnload(e) {
 
 }
 
-document.addEventListener('onload', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
+document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
 console.log("After the document event listener");
 
-//Bootstrap Toast Message
 
+
+//Bootstrap js
+
+//Toast Message
 //Launches advertisement 5 seconds after page loads....
 $(document).ready(function() {
     setTimeout(function() {
@@ -73,7 +77,7 @@ $(document).ready(function() {
 });
 
 
-//Boostrap Drop Down on Form
+//Drop Down on Form
 
 //Code was modified from https://stackoverflow.com/questions/24620741/get-selected-item-value-from-bootstrap-dropdown-with-specific-id
 $('#form-dropdown-test a').on('click', function(){
