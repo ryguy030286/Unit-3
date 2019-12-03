@@ -107,7 +107,8 @@ function addPageView() {
     };
 
     // now add new page data to the array
-    arr.push(newPageData);
+    arr.push(newPageData.path);
+    arr.push(newPageData.timestamp);
 
     // finally, we want to update our storage with the most up to date array
     localStorage.setItem(pageViewsKeyName, arr);
