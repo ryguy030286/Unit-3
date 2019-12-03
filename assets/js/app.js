@@ -33,7 +33,7 @@ function myAppOnload(e) {
             let options = {
                 method, // shorthand for method: method
                 mode: 'cors', // make sure you are running through HTTP:// and not file://
-                data // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
+                body: new FormData (form)// see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
             };
             debugger;
 
