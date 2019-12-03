@@ -107,7 +107,8 @@ function addPageView() {
     };
 
     // now add new page data to the array
-    arr.push(newPageData);
+    arr.push(newPageData.path);
+    arr.push(newPageData.timestamp);
 
     //Alex's fix to show data.
     // arr.push(newPageData.path, newPageData.timestamp);
