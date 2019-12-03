@@ -34,24 +34,52 @@ function myAppOnload(e) {
                 method, // shorthand for method: method
                 mode: 'cors', // make sure you are running through HTTP:// and not file://
                 body: new FormData (form)// see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
-            };
-            debugger;
+            }
 
+            /*
             const submitForm = async (evt) => {
-                return await fetch(action, options).then(function(response){
-                    debugger;
+                return await fetch(action, options)
+
+                   .then(function(response){
                     if (response.ok) {
                         console.log("Form submission was successful, 200 code received.");
                         document.getElementById("form-success").classList.remove("d-none");
                         document.getElementById("form-failed").classList.add("d-none");
                     }
-                }).catch(function(err){
+                })
+                    .catch(function(err){
                     document.getElementById("form-failed").classList.remove("d-none");
                     document.getElementById("form-success").classList.add("d-none");
                     console.log("Received error message from form website after submitting.");
+                    console.log(response.status);
                     console.error(err);
 
                 });
+
+
+             */
+
+            //Ryan's new test, original code block is commented out above.
+            const submitForm = async (evt) => {
+                return await fetch(action, options)
+
+                    .then(function(response){
+                        if (response.status == 200) {
+                            console.log("Form submission was successful, 200 code received.");
+                            document.getElementById("form-success").classList.remove("d-none");
+                            document.getElementById("form-failed").classList.add("d-none");
+                        }
+                    })
+                    .catch(function(err){
+                        document.getElementById("form-failed").classList.remove("d-none");
+                        document.getElementById("form-success").classList.add("d-none");
+                        console.log("Received error message from form website after submitting.");
+                        console.error(err);
+
+                    });
+
+
+
 
 
             };
