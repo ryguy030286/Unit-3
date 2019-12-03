@@ -97,7 +97,7 @@ function addPageView() {
     let arr = [];
     if (pageViews && pageViews.length > 0) {
         // get the array stored in local storage at pageViewsKeyName
-        arr = JSON.parse(pageViews);
+        arr = JSON.parse(pageViews.path, pageViews.timestamp);
     }
 
     // now we're able to insert an item in the page view data
@@ -109,9 +109,18 @@ function addPageView() {
     // now add new page data to the array
     arr.push(newPageData);
 
+    //Alex's fix to show data.
+    // arr.push(newPageData.path, newPageData.timestamp);
+
+
     // finally, we want to update our storage with the most up to date array
     localStorage.setItem(pageViewsKeyName, arr);
 }
+
+function listPageViews() {
+
+}
+
 
 // window.onload = addPageView;
 
