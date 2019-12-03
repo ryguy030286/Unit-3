@@ -8,7 +8,6 @@ function myAppOnload(e) {
 
     form.addEventListener('submit', e => {
         e.preventDefault();
-        debugger;
 
         //Form Validation
         let firstName = document.getElementById("first");
@@ -19,26 +18,45 @@ function myAppOnload(e) {
 
 
         if (firstName.value == "" || lastName.value == "" || email.value == "" || calendar.value == "" || dropDown.value == "") {
-            console.log("Launch error message.");
-            document.getElementById("form-failed").classList.remove("d-none");
-            document.getElementById("form-success").classList.add("d-none");
+            console.log("One of the fields are not filled out.");
+
         } else {
-            console.log("Confirm validation is ok.");
-            document.getElementById("form-success").classList.remove("d-none");
-            document.getElementById("form-failed").classList.add("d-none");
+            console.log("All the fields are filled out.");
+
             const form = document.getElementById("contact");
 
             const method = form.getAttribute("method");
             const action = form.getAttribute("action");
+
+
+            let data = $(form).serialize();
+            let options = {
+                method, // shorthand for method: method
+                mode: 'cors', // make sure you are running through HTTP:// and not file://
+                data // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
+            };
+            debugger;
+
             const submitForm = async (evt) => {
-                return await fetch(action, {
-                    method, // shorthand for method: method
-                    mode: 'cors', // make sure you are running through HTTP:// and not file://
-                    data: new FormData(form) // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
-                }).then().catch()
+                return await fetch(action, options).then(function(response){
+                    debugger;
+                    if (response.ok) {
+                        console.log("Form submission was successful, 200 code received.");
+                        document.getElementById("form-success").classList.remove("d-none");
+                        document.getElementById("form-failed").classList.add("d-none");
+                    }
+                }).catch(function(err){
+                    document.getElementById("form-failed").classList.remove("d-none");
+                    document.getElementById("form-success").classList.add("d-none");
+                    console.log("Received error message from form website after submitting.");
+                    console.error(err);
+
+                });
+
+
             };
 
-
+                console.log(submitForm());
 
         // @todo handle submitForm Promise
         // @see <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Response_objects>
