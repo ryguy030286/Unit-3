@@ -76,7 +76,7 @@ function myAppOnload(e) {
                             }
                         })
                         .catch(function (err) {
-                            document.getElementById("form-failed").classList.remove("d-none");
+                            document.getElementById("form-server-error").classList.remove("d-none");
                             document.getElementById("form-success").classList.add("d-none");
                             console.log("Received error message from form website after submitting.");
                             console.error(err);
