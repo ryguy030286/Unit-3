@@ -86,10 +86,10 @@ function myAppOnload(e) {
             }
 
         });  //End of method
-    }catch (e) {
+    } catch (e) {
         console.log("There was an error on line 9.");
     }
-    }
+}
 
 //Recording and viewing page views
 
@@ -143,6 +143,7 @@ function addPageView() {
 
     function listPageViews() {
     }
+}
 
     document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
 
@@ -175,4 +176,4 @@ function addPageView() {
         $('#drop-down-feedback').val($(this).html());
     });
 
-}
+
