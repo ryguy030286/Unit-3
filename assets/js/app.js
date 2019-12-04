@@ -112,39 +112,37 @@ function addPageView() {
      * afterward, or if the array already existed, we want to append to the array
      */
     let pageViews = localStorage.getItem(pageViewsKeyName);
+    console.log("Local Storage Count: " + localStorage.length);
     let arr = [];
     if (pageViews && pageViews.length > 0) {
         // get the array stored in local storage at pageViewsKeyName
-       try {
-           arr = JSON.parse(pageViews);
-       }catch (e) {
-           console.log("Error on line 121 with the JSON parse.");
-       }
 
-       console.log("However, if this text shows that means the issues were caught and the script is " +
-           "continuing to execute.");
+        arr = JSON.parse(pageViews);
 
 
+        console.log("However, if this text shows that means the issues were caught and the script is " +
+            "continuing to execute.");
+
+
+        // now we're able to insert an item in the page view data
+        let newPageData = {
+            "path": window.location.pathname,
+            "timestamp": moment()
+        };
+
+        // now add new page data to the array
+        arr.push(newPageData);
+        console.log("Array Length: " + arr.length);
+
+        // arr.push(newPageData.path, newPageData.timestamp);
+
+
+        // finally, we want to update our storage with the most up to date array
+        localStorage.setItem(pageViewsKeyName, arr);
     }
 
-    // now we're able to insert an item in the page view data
-    let newPageData = {
-        "path": window.location.pathname,
-        "timestamp": moment()
-    };
-
-    // now add new page data to the array
-    arr.push(newPageData);
-
-    // arr.push(newPageData.path, newPageData.timestamp);
-
-
-    // finally, we want to update our storage with the most up to date array
-    localStorage.setItem(pageViewsKeyName, arr);
-}
-
-function listPageViews() {
-}
+    function listPageViews() {
+    }
 
     document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
 
@@ -176,3 +174,5 @@ function listPageViews() {
     $('#form-dropdown-test a').on('click', function () {
         $('#drop-down-feedback').val($(this).html());
     });
+
+}
