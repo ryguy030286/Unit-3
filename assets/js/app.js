@@ -27,12 +27,12 @@ function myAppOnload(e) {
                 const action = form.getAttribute("action");
 
 
-                let data = $(form).serialize();
+                //let data = $(form).serialize();
                 let options = {
                     method, // shorthand for method: method
                     mode: 'cors', // make sure you are running through HTTP:// and not file://
                     body: new FormData(form)// see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
-                }
+                };
 
                 /*
                 const submitForm = async (evt) => {
