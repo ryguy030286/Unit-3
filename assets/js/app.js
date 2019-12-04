@@ -172,7 +172,7 @@ function listPageViews(array) {
         tableBody.appendChild(tr);
     });
 }
-//============== End of load internal storage ======================
+//============== End of load internal storage =======================
 
 
 
