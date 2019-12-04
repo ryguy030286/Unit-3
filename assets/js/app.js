@@ -17,6 +17,7 @@ function myAppOnload(e) {
 
             if (firstName.value == "" || lastName.value == "" || email.value == "" || calendar.value == "" || dropDown.value == "") {
                 console.log("One of the fields are not filled out.");
+                document.getElementById("form-failed").classList.remove("d-none");
 
             } else {
                 console.log("All the fields are filled out.");
@@ -26,12 +27,85 @@ function myAppOnload(e) {
                 const method = form.getAttribute("method");
                 const action = form.getAttribute("action");
 
+                //Start for JS code from https://jsfiddle.net/seamusleahy/rxeuaatw/
+                var formEl = document.getElementById('contact');
 
-                //let data = $(form).serialize();
+
+
+                //formEl.addEventListener('submit', function(event) {
+                    // 1. Setup the request
+                    // ================================
+                    // 1.1 Headers
+                    var headers = new Headers();
+                    // Tell the server we want JSON back
+                    headers.set('Accept', 'application/json');
+
+                    // 1.2 Form Data
+                    // We need to properly format the submitted fields.
+                    // Here we will use the same format the browser submits POST forms.
+                    // You could use a different format, depending on your server, such
+                    // as JSON or XML.
+                    var formData = new FormData();
+                    for (var i = 0; i < formEl.length; ++i) {
+                        formData.append(formEl[i].name, formEl[i].value);
+                    }
+
+                    // This is for the purpose of this demo using jsFiddle AJAX Request endpoint
+                    formData.append('json', JSON.stringify({example: 'return value'}));
+
+                    // 2. Make the request
+                    // ================================
+                    var url = 'https://formspree.io/mpzwlbpr';
+                    var fetchOptions = {
+                        method: 'POST',
+                        headers,
+                        body: formData
+                    };
+
+                    var responsePromise = fetch(url, fetchOptions);
+
+
+                    // 3. Use the response
+                    // ================================
+                    responsePromise
+                        .then(function (response) {
+                            if (response.status == 200) {
+                                console.log("Form submission was successful, 200 code received.");
+                                document.getElementById("form-success").classList.remove("d-none");
+                                document.getElementById("form-failed").classList.add("d-none");
+                            }
+                        })
+                        .catch(function (err) {
+                            document.getElementById("form-failed").classList.remove("d-none");
+                            document.getElementById("form-success").classList.add("d-none");
+                            console.log("Received error message from form website after submitting.");
+                            console.error(err);
+
+                        });
+                    // 3.1 Convert the response into JSON-JS object.
+                    //     .then(function(response) {
+                    //         return response.json();
+                    //     })
+                    //     // 3.2 Do something with the JSON data
+                    //     .then(function(jsonData) {
+                    //         console.log(jsonData);
+                    //         document.getElementById('results').innerText =
+                    //             JSON.stringify(jsonData);
+                    //     });
+
+
+                    //event.preventDefault();
+                //});
+                //End to JS code from https://jsfiddle.net/seamusleahy/rxeuaatw/
+
+
+
+
+                let data = $(form).serialize();
                 let options = {
                     method, // shorthand for method: method
                     mode: 'cors', // make sure you are running through HTTP:// and not file://
-                    body: new FormData(form)// see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
+                    data // see <https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData>
                 };
 
                 /*
@@ -57,7 +131,7 @@ function myAppOnload(e) {
 
                  */
 
-                //Ryan's new test, original code block is commented out above.
+                /*Ryan's new test, original code block is commented out above.
                 const submitForm = async (evt) => {
                     return await fetch(action, options)
 
@@ -75,7 +149,7 @@ function myAppOnload(e) {
                             console.error(err);
 
                         });
-                };
+                };*/
 
                 // @todo handle submitForm Promise
                 // @see <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Response_objects>
