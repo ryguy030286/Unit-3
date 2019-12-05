@@ -94,8 +94,7 @@ function myAppOnload(e) {
 }
 
 
-//Recording and viewing page views
-
+//=================================Recording and viewing page views=================================//
 /**
  * Need to do:
  * - Add a new page view & timestamp
@@ -119,24 +118,24 @@ function addPageView() {
     let arr = [];
     if (pageViews && pageViews.length > 0) {
         // get the array stored in local storage at pageViewsKeyName
-
         arr = JSON.parse(pageViews);
 
     }
-        // now we're able to insert an item in the page view data
-        let newPageData = {
-            "path": window.location.pathname,
-            "timestamp": moment()
-        };
+    // now we're able to insert an item in the page view data
+    let newPageData = {
+        "path": window.location.pathname,
+        "timestamp": moment()
+    };
 
-        // now add new page data to the array
-        arr.push(newPageData);
+    // now add new page data to the array
+    arr.push(newPageData);
 
-        // finally, we want to update our storage with the most up to date array
-        //Ryan edit.  The array needs to be converted back to a string for storage.
-        localStorage.setItem(pageViewsKeyName, JSON.stringify(arr));
-
+    // finally, we want to update our storage with the most up to date array
+    //Ryan edit.  The array needs to be converted back to a string for storage.
+    localStorage.setItem(pageViewsKeyName, JSON.stringify(arr));
 }
+//=================================Recording and viewing page views=================================//
+
 
 
 // //===============  Load the internal storage ========================
@@ -166,7 +165,7 @@ function addPageView() {
 
 
 
-    document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
+document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
 
 
 //Ryan's addPageView call
