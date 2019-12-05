@@ -120,13 +120,8 @@ function addPageView() {
     if (pageViews && pageViews.length > 0) {
         // get the array stored in local storage at pageViewsKeyName
 
-        // //arr = JSON.parse(pageViews);
+        arr = JSON.parse(pageViews);
 
-        for (let obj in pageViews) {
-            console.log(obj);
-            console.log(pageViews);
-            arr = obj;
-        }
     }
         // now we're able to insert an item in the page view data
         let newPageData = {
@@ -137,60 +132,45 @@ function addPageView() {
         // now add new page data to the array
         arr.push(newPageData);
 
-        // arr.push(newPageData.path, newPageData.timestamp);
-
         // finally, we want to update our storage with the most up to date array
-        //localStorage.setItem(pageViewsKeyName, arr);
-
         //Ryan edit.  The array needs to be converted back to a string for storage.
         localStorage.setItem(pageViewsKeyName, JSON.stringify(arr));
 
-
-
 }
 
 
-//===============  Load the internal storage ========================
-function listPageViews(array) {
-    let table = document.getElementById("websiteLogsTable");
-    let tableBody = document.getElementById("logTableBody");
-    array.map(item => {
-        //creates the elements
-        let tr = document.createElement("<tr>");
-        let pageURL = document.createElement("<td>");
-        let timeStamp = document.createElement("<td>");
-
-        //adds values to the tags
-        pageURL.innerText = array[0].path;
-        timeStamp.innerText = array[0].timestamp;
-
-        //add the td tags to the TR
-        tr.appendChild(pageURL);
-        tr.appendChild(timeStamp);
-
-        //add the TR to the table
-        tableBody.appendChild(tr);
-    });
-}
-//============== End of load internal storage =======================
+// //===============  Load the internal storage ========================
+// function listPageViews(array) {
+//     let table = document.getElementById("websiteLogsTable");
+//     let tableBody = document.getElementById("logTableBody");
+//     array.map(item => {
+//         //creates the elements
+//         let tr = document.createElement("<tr>");
+//         let pageURL = document.createElement("<td>");
+//         let timeStamp = document.createElement("<td>");
+//
+//         //adds values to the tags
+//         pageURL.innerText = array[0].path;
+//         timeStamp.innerText = array[0].timestamp;
+//
+//         //add the td tags to the TR
+//         tr.appendChild(pageURL);
+//         tr.appendChild(timeStamp);
+//
+//         //add the TR to the table
+//         tableBody.appendChild(tr);
+//     });
+// }
+// //============== End of load internal storage =======================
 
 
 
 
     document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
 
-//Loads method to record page urls and time stamp to local storage.
-    //document.addEventListener('DOMContentLoaded', addPageView);
 
 //Ryan's addPageView call
 window.onload = addPageView;
-
-
-let testArray = [{path:"Sherdog.com", timestamp: "10.00am"}, {path:"google.com", timestamp: "10:30am"}];
-listPageViews(testArray);
-
-
-
 
 
 
