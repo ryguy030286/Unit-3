@@ -138,7 +138,7 @@ function addPageView() {
 
 
 
-// //===============  Load the internal storage ========================
+// //===============  Load the internal storage =========================
 
 //Attempt 1
 function listPageViews(array) {
