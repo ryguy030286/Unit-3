@@ -79,12 +79,6 @@ function myAppOnload(e) {
 
                 //End to JS code from https://jsfiddle.net/seamusleahy/rxeuaatw/
 
-                // @todo handle submitForm Promise
-                // @see <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Response_objects>
-                // @see <https://javascript.info/async>
-                // on a successful promise/submission, display a success alert
-                // on a failure promise/submission, display a failure (danger) alert
-
             }
 
         });  //End of method
@@ -95,7 +89,7 @@ function myAppOnload(e) {
 
 
 
-//Bootstrap js
+//=========================== Bootstrap js=========================================================//
 
 //Toast Message
 //Launches advertisement 5 seconds after page loads....
@@ -120,7 +114,7 @@ function myAppOnload(e) {
         $('#drop-down-feedback').val($(this).html());
     });
 
-
+//========================== End of Bootstrap js =================================================//
 
 
 
@@ -167,7 +161,6 @@ function addPageView() {
     //Ryan edit.  The array needs to be converted back to a string for storage.
     localStorage.setItem(pageViewsKeyName, JSON.stringify(arr));
 }
-//=================================Recording and viewing page views=================================//
 
 
 
@@ -195,29 +188,6 @@ function listPageViews(array) {
         tableBody.appendChild(tr);
     });
 }
-
-//Attempt 2
-// function listPageViews(array) {
-//     let table = document.getElementById("websiteLogsTable");
-//     let tableBody = document.getElementById("logTableBody");
-//
-//     let tr = document.createElement("tr");
-//     let pageURL = document.createElement("td");
-//     let timeStamp = document.createElement("td");
-//
-//     let i;
-//     for (i=0; i<array.length; i++){
-//         pageURL.innerText = array[i].path;
-//         timeStamp.innerText = array[i].timestamp;
-//
-//         //add the td tags to the TR
-//         tr.appendChild(pageURL);
-//         tr.appendChild(timeStamp);
-//
-//         //add the TR to the table
-//         tableBody.appendChild(tr);
-//     };
-// }
 // //============== End of load internal storage =======================
 
 
@@ -229,10 +199,32 @@ document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT 
 //Records the page name and time accessed
 window.onload = addPageView;
 
-
 //Access local storage and populate table on table page.
 listPageViews(JSON.parse(localStorage.getItem(pageViewsKeyName)));
 
+
+
+
+//=============== executes table clear and refreshes page ========================//
+
+let table_button = document.getElementById('table_clear_button')
+    table_button.addEventListener("click", function () {
+        localStorage.clear();
+        window.location.reload();
+});
+
+//=============== End of table clear and refresh =================================//
+
+
+// if(cache_message_status === true){
+//         setTimeout(function () {
+//            document.getElementById("cache_alert").classList.remove("d-none");
+//         }, 300);
+//
+//         setTimeout(function () {
+//             document.getElementById("cache_alert").classList.add("d-none");
+//         }, 8000);
+//     };
 
 
 

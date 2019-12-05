@@ -127,3 +127,15 @@ input[type=text], input[type=email], select {
 #form-submit{
   margin-top: 40px;
 }
+
+#table_clear_button_container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 300px;
+}
+
+#table_clear_button{
+  width: 150px;
+  height: 60px;
+}
