@@ -91,6 +91,39 @@ function myAppOnload(e) {
     } catch (e) {
         console.log("There was an error on line 9.");
     }
+
+
+
+
+//Bootstrap js
+
+//Toast Message
+//Launches advertisement 5 seconds after page loads....
+    $(document).ready(function () {
+        setTimeout(function () {
+            $('.toast').toast('show');
+        }, 5000);
+    });
+
+//Closes advertisement 30 seconds after page loads.
+    $(document).ready(function () {
+        setTimeout(function () {
+            $('.toast').toast('hide');
+        }, 30000);
+    });
+
+
+//Drop Down on Form
+
+//Code was modified from https://stackoverflow.com/questions/24620741/get-selected-item-value-from-bootstrap-dropdown-with-specific-id
+    $('#form-dropdown-test a').on('click', function () {
+        $('#drop-down-feedback').val($(this).html());
+    });
+
+
+
+
+
 }
 
 
@@ -204,28 +237,5 @@ listPageViews(JSON.parse(localStorage.getItem(pageViewsKeyName)));
 
 
 
-//Bootstrap js
 
-//Toast Message
-//Launches advertisement 5 seconds after page loads....
-    $(document).ready(function () {
-        setTimeout(function () {
-            $('.toast').toast('show');
-        }, 5000);
-    });
-
-//Closes advertisement 30 seconds after page loads.
-    $(document).ready(function () {
-        setTimeout(function () {
-            $('.toast').toast('hide');
-        }, 30000);
-    });
-
-
-//Drop Down on Form
-
-//Code was modified from https://stackoverflow.com/questions/24620741/get-selected-item-value-from-bootstrap-dropdown-with-specific-id
-    $('#form-dropdown-test a').on('click', function () {
-        $('#drop-down-feedback').val($(this).html());
-    });
 
