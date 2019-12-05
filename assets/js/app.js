@@ -139,18 +139,43 @@ function addPageView() {
 
 
 // //===============  Load the internal storage ========================
+
+//Attempt 1
+function listPageViews(array) {
+    let table = document.getElementById("websiteLogsTable");
+    let tableBody = document.getElementById("logTableBody");
+    array.map(item => {
+        //creates the elements
+        let tr = document.createElement("tr");
+        let pageURL = document.createElement("td");
+        let timeStamp = document.createElement("td");
+
+        //adds values to the tags
+        pageURL.innerText = item.path;
+        timeStamp.innerText = item.timestamp;
+
+        //add the td tags to the TR
+        tr.appendChild(pageURL);
+        tr.appendChild(timeStamp);
+
+        //add the TR to the table
+        tableBody.appendChild(tr);
+    });
+}
+
+//Attempt 2
 // function listPageViews(array) {
 //     let table = document.getElementById("websiteLogsTable");
 //     let tableBody = document.getElementById("logTableBody");
-//     array.map(item => {
-//         //creates the elements
-//         let tr = document.createElement("<tr>");
-//         let pageURL = document.createElement("<td>");
-//         let timeStamp = document.createElement("<td>");
 //
-//         //adds values to the tags
-//         pageURL.innerText = array[0].path;
-//         timeStamp.innerText = array[0].timestamp;
+//     let tr = document.createElement("tr");
+//     let pageURL = document.createElement("td");
+//     let timeStamp = document.createElement("td");
+//
+//     let i;
+//     for (i=0; i<array.length; i++){
+//         pageURL.innerText = array[i].path;
+//         timeStamp.innerText = array[i].timestamp;
 //
 //         //add the td tags to the TR
 //         tr.appendChild(pageURL);
@@ -158,7 +183,7 @@ function addPageView() {
 //
 //         //add the TR to the table
 //         tableBody.appendChild(tr);
-//     });
+//     };
 // }
 // //============== End of load internal storage =======================
 
@@ -168,8 +193,14 @@ function addPageView() {
 document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
 
 
-//Ryan's addPageView call
+//Records the page name and time accessed
 window.onload = addPageView;
+
+
+//Access local storage and populate table on table page.
+listPageViews(JSON.parse(localStorage.getItem(pageViewsKeyName)));
+
+
 
 
 
