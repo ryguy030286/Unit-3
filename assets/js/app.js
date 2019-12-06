@@ -15,19 +15,19 @@ function myAppOnload(e) {
             let dropDown = document.getElementById("drop-down-feedback");
 
 
-//============================== start of form submission code ====================================//
-
             if (firstName.value == "" || lastName.value == "" || email.value == "" || calendar.value == "" || dropDown.value == "") {
+                console.log("One of the fields are not filled out.");
                 document.getElementById("form-failed").classList.remove("d-none");
 
             } else {
+                console.log("All the fields are filled out.");
+
                 const form = document.getElementById("contact");
 
                 const method = form.getAttribute("method");
                 const action = form.getAttribute("action");
 
-                //below code is from https://jsfiddle.net/seamusleahy/rxeuaatw/
-
+                //Start for JS code from https://jsfiddle.net/seamusleahy/rxeuaatw/
                 var formEl = document.getElementById('contact');
 
                     // 1. Setup the request
@@ -52,8 +52,8 @@ function myAppOnload(e) {
 
                     // 2. Make the request
                     // ================================
-                    //var url = 'https://formspree.io/mpzwlbpr';  //Alex's form.
-                      var url = 'https://formspree.io/xrgbpkyw';  //Ryan's form.
+                    var url = 'https://formspree.io/mpzwlbpr';  //Alex's form.
+                    //var url = 'https://formspree.io/xrgbpkyw';  //Ryan's form.
                     var fetchOptions = {
                         method: 'POST',
                         headers,
@@ -77,7 +77,7 @@ function myAppOnload(e) {
                                 console.error(err);
                             }});
 
-//============================== End of form submission code ====================================//
+                //End to JS code from https://jsfiddle.net/seamusleahy/rxeuaatw/
 
             }
 
@@ -191,16 +191,7 @@ function listPageViews(array) {
 // //============== End of load internal storage =======================
 
 
-//=============== executes table clear and refreshes page ========================//
 
-let table_button = document.getElementById('table_clear_button');
-    table_button.addEventListener("click", function () {
-        localStorage.clear();
-        window.location.reload();
-        window.alert("The cache has been cleared!");
-    });
-
-//=============== End of table clear and refresh =================================//
 
 document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
 
@@ -211,3 +202,16 @@ window.onload = addPageView;
 //Access local storage and populate table on table page.
 listPageViews(JSON.parse(localStorage.getItem(pageViewsKeyName)));
 
+
+
+
+//=============== executes table clear and refreshes page ========================//
+
+let table_button = document.getElementById('table_clear_button');
+    table_button.addEventListener("click", function () {
+        localStorage.clear();
+        window.location.reload();
+        window.alert("The cache has been cleared!");
+    });
+
+//=============== End of table clear and refresh =================================//
