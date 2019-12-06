@@ -15,19 +15,19 @@ function myAppOnload(e) {
             let dropDown = document.getElementById("drop-down-feedback");
 
 
+//============================== start of form submission code ====================================//
+
             if (firstName.value == "" || lastName.value == "" || email.value == "" || calendar.value == "" || dropDown.value == "") {
-                console.log("One of the fields are not filled out.");
                 document.getElementById("form-failed").classList.remove("d-none");
 
             } else {
-                console.log("All the fields are filled out.");
-
                 const form = document.getElementById("contact");
 
                 const method = form.getAttribute("method");
                 const action = form.getAttribute("action");
 
-                //Start for JS code from https://jsfiddle.net/seamusleahy/rxeuaatw/
+                //below code is from https://jsfiddle.net/seamusleahy/rxeuaatw/
+
                 var formEl = document.getElementById('contact');
 
                     // 1. Setup the request
@@ -77,7 +77,7 @@ function myAppOnload(e) {
                                 console.error(err);
                             }});
 
-                //End to JS code from https://jsfiddle.net/seamusleahy/rxeuaatw/
+//============================== End of form submission code ====================================//
 
             }
 
@@ -191,20 +191,6 @@ function listPageViews(array) {
 // //============== End of load internal storage =======================
 
 
-
-
-document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
-
-
-//Records the page name and time accessed
-window.onload = addPageView;
-
-//Access local storage and populate table on table page.
-listPageViews(JSON.parse(localStorage.getItem(pageViewsKeyName)));
-
-
-
-
 //=============== executes table clear and refreshes page ========================//
 
 let table_button = document.getElementById('table_clear_button');
@@ -215,3 +201,13 @@ let table_button = document.getElementById('table_clear_button');
     });
 
 //=============== End of table clear and refresh =================================//
+
+document.addEventListener('DOMContentLoaded', myAppOnload); // notice we do NOT call myAppOnload, we only pass the name of it. The event listener will call it (by using () after the name) when the event is triggered
+
+
+//Records the page name and time accessed
+window.onload = addPageView;
+
+//Access local storage and populate table on table page.
+listPageViews(JSON.parse(localStorage.getItem(pageViewsKeyName)));
+
