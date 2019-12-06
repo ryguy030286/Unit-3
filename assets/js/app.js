@@ -151,7 +151,7 @@ function addPageView() {
     // now we're able to insert an item in the page view data
     let newPageData = {
         "path": window.location.pathname,
-        "timestamp": moment()
+        "timestamp": moment().format('MMMM Do YYYY, h:mm:ss a')
     };
 
     // now add new page data to the array
