@@ -127,7 +127,7 @@ function myAppOnload(e) {
  * - Add a new page view & timestamp
  * - list the page views & timestamps
  */
-
+const moment = require('moment');
 const pageViewsKeyName = "pageViews";
 
 /**

@@ -7,7 +7,7 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 
 function css() {
-  return src('assets/css/style.scss')
+  return src('assets/css/styles.scss')
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(minifyCSS())
