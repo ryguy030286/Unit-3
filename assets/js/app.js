@@ -207,11 +207,17 @@ listPageViews(JSON.parse(localStorage.getItem(pageViewsKeyName)));
 
 //=============== executes table clear and refreshes page ========================//
 
-let table_button = document.getElementById('table_clear_button')
+let table_button = document.getElementById('table_clear_button');
     table_button.addEventListener("click", function () {
         localStorage.clear();
         window.location.reload();
-});
+        let myAlert = window.alert("The cache has been cleared!");
+        // let okPressed = window.confirm("Would you like to see a popup window?");
+        // if (okPressed) {
+        //     let myWindow = window.open("", "", "width=250, height=100");
+        //     myWindow.document.writeln("<h1>Hello, Popup!</h1>");
+        // }
+    });
 
 //=============== End of table clear and refresh =================================//
 
