@@ -215,20 +215,3 @@ let table_button = document.getElementById('table_clear_button');
     });
 
 //=============== End of table clear and refresh =================================//
-
-
-// if(cache_message_status === true){
-//         setTimeout(function () {
-//            document.getElementById("cache_alert").classList.remove("d-none");
-//         }, 300);
-//
-//         setTimeout(function () {
-//             document.getElementById("cache_alert").classList.add("d-none");
-//         }, 8000);
-//     };
-
-
-
-
-
-
